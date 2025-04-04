@@ -1,0 +1,39 @@
+﻿<Window x:Class="ProgramacaoIV.Exercicios.Janelas.ExercicioQuatro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProgramacaoIV.Exercicios.Janelas"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Exercicio 4" Height="400" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" MaxHeight="50"/>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBox
+            Grid.Row="1"
+            x:Name="txtVerificador"
+            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+            materialDesign:HintAssist.Hint="Insira sua idade"          
+            Margin="8"
+            VerticalAlignment="Bottom" />
+
+        <Button
+            x:Name="btnVerificador"            
+            Grid.Row="3"
+            Margin="4"
+            Style="{StaticResource MaterialDesignRaisedSecondaryLightButton}"            
+            ToolTip="Verificador de maioridade (Booleano)"
+            Content="Verificador"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" 
+            Click="btnVerificador_Click"/>
+    </Grid>
+</Window>
